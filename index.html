@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Curso Interativo</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="background"></div> <!-- Fundo animado -->
+
+  <!-- Página 1 -->
+  <div id="pagina1" class="tela ativa">
+    <h1>Bem-vindo ao Curso de HTML</h1>
+    <p>Desafie seus conhecimentos com o nosso conteúdo interativo.</p>
+    <button class="start-button" onclick="mostrarPagina('pagina2')">INICIAR AGORA</button>
+  </div>
+
+  <!-- Página 2 -->
+  <div id="pagina2" class="tela">
+    <h2>Escolha como deseja estudar:</h2>
+    <button class="option-button" onclick="mostrarPagina('quiz1')">Quiz de Estudo</button>
+    <button class="option-button" onclick="mostrarPagina('estudo1')">Escrita de Código</button>
+  </div>
+
+  <!-- Quiz -->
+  <div id="quiz1" class="tela">
+    <h2>Quiz de Python - Pergunta 1</h2>
+    <p>O que é Python?</p>
+    <ul>
+      <li><input type="radio" name="q1"> Uma cobra</li>
+      <li><input type="radio" name="q1"> Uma linguagem de programação</li>
+      <li><input type="radio" name="q1"> Um navegador</li>
+    </ul>
+    <button class="start-button" onclick="mostrarPagina('quiz2')">Próxima Pergunta</button>
+  </div>
+
+  <div id="quiz2" class="tela">
+    <h2>Quiz de Python - Pergunta 2</h2>
+    <p>Qual comando imprime algo na tela?</p>
+    <ul>
+      <li><input type="radio" name="q2"> echo</li>
+      <li><input type="radio" name="q2"> print()</li>
+      <li><input type="radio" name="q2"> show()</li>
+    </ul>
+    <button class="start-button" onclick="mostrarPagina('quiz3')">Próxima Pergunta</button>
+  </div>
+
+  <!-- Estudo de Código 1 -->
+  <div id="estudo1" class="tela">
+    <h2>Digite o código da Lousa Branca</h2>
+    <div class="lousa-container">
+      <textarea class="lousa lousa-preta" id="codigo1"></textarea>
+      <div>
+        <textarea class="lousa lousa-branca" readonly>&lt;!DOCTYPE html&gt;</textarea>
+      </div>
+    </div>
+    <button class="start-button" onclick="executarCodigo('codigo1')">Executar o Código</button>
+    <div id="erro1" class="mensagem-erro"></div>
+    <iframe id="resultado1"></iframe>
+  </div>
+
+  <!-- Botões de navegação -->
+  <div class="botoes-inferiores">
+    <button class="back-button" onclick="mostrarPagina('pagina1')">Voltar ao Início</button>
+    <button class="start-button" onclick="mostrarPagina('pagina2')">Avançar</button>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
